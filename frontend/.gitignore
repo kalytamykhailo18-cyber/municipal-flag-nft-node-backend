@@ -1,0 +1,46 @@
+# Dependencies
+node_modules/
+venv/
+__pycache__/
+*.pyc
+
+# Environment
+.env
+.env.local
+# Note: .env.production is NOT gitignored - it contains only public config for Railway deployment
+
+# Build outputs
+build/
+dist/
+artifacts/
+cache/
+typechain-types/
+
+# Database
+*.db
+*.sqlite
+
+# Generated files
+ai-generator/output/
+ai-generator/metadata/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Test coverage
+coverage/
+.nyc_output/
+
+# Misc
+*.map

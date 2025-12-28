@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-dark-darker text-gray-100 font-sans antialiased;
+  }
+
+  a {
+    @apply transition-colors duration-200;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-6 py-3 rounded-[3px] font-semibold transition-all duration-200 inline-flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-primary {
+    @apply bg-primary hover:bg-primary-dark text-white;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary hover:bg-secondary-light text-white border border-gray-700;
+  }
+
+  .btn-outline {
+    @apply bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-white;
+  }
+
+  .card {
+    @apply bg-dark rounded-[3px] border border-gray-800 overflow-hidden transition-all duration-300;
+  }
+
+  .card-hover {
+    @apply hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 hover:-translate-y-1;
+  }
+
+  .input {
+    @apply w-full px-4 py-3 bg-dark-darker border border-gray-700 rounded-[3px] text-white placeholder-gray-500 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors;
+  }
+
+  .badge {
+    @apply px-3 py-1 rounded-full text-sm font-medium;
+  }
+
+  .badge-standard {
+    @apply text-gray-100 border border-gray-500;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+
+  .badge-plus {
+    @apply text-blue-400 border border-blue-500;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+
+  .badge-premium {
+    @apply text-yellow-400 border border-yellow-500 font-bold;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+
+  .badge-available {
+    @apply bg-success/20 text-success;
+  }
+
+  .badge-claimed {
+    @apply bg-warning/20 text-warning;
+  }
+
+  .badge-complete {
+    @apply bg-primary/20 text-primary;
+  }
+
+  .page-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8;
+  }
+
+  .page-header {
+    @apply mb-8;
+  }
+
+  .page-title {
+    @apply text-3xl md:text-4xl font-bold text-white mb-2;
+  }
+
+  .page-subtitle {
+    @apply text-gray-400 text-lg;
+  }
+
+  .section-title {
+    @apply text-2xl font-bold text-white mb-6;
+  }
+
+  .breadcrumb {
+    @apply flex items-center gap-2 text-sm text-gray-400 mb-6;
+  }
+
+  .breadcrumb a {
+    @apply hover:text-primary;
+  }
+
+  .breadcrumb span {
+    @apply text-gray-600;
+  }
+
+  .grid-cards {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6;
+  }
+
+  .stat-card {
+    @apply bg-dark rounded-xl p-6 border border-gray-800 text-center;
+  }
+
+  .stat-value {
+    @apply text-3xl font-bold text-primary block;
+  }
+
+  .stat-label {
+    @apply text-gray-400 text-sm mt-1 block;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-pink-500 bg-clip-text text-transparent;
+  }
+}

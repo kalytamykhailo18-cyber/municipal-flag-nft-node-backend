@@ -1,0 +1,332 @@
+/* ============================================================
+   STAGGERED ITEM ANIMATIONS
+   ============================================================
+   Animation system for Municipal Flag NFT Game
+   - Multiple animation directions
+   - Variable durations
+   - Staggered delays for sequential reveals
+   - NO JavaScript required - pure CSS animations
+   ============================================================ */
+
+/* ============================================================
+   BASE ANIMATION SETUP
+   ============================================================ */
+
+/* Elements automatically animate on load - no JavaScript required */
+[data-animate] {
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  animation-duration: 600ms;
+}
+
+/* ============================================================
+   ANIMATION DIRECTIONS
+   ============================================================ */
+
+/* Fade Up - Element fades in while moving upward */
+[data-animate="fade-up"] {
+  animation-name: fadeUp;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade Down - Element fades in while moving downward */
+[data-animate="fade-down"] {
+  animation-name: fadeDown;
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade Left - Element fades in while moving from right to left */
+[data-animate="fade-left"] {
+  animation-name: fadeLeft;
+}
+
+@keyframes fadeLeft {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Fade Right - Element fades in while moving from left to right */
+[data-animate="fade-right"] {
+  animation-name: fadeRight;
+}
+
+@keyframes fadeRight {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Zoom In - Element scales up from smaller size */
+[data-animate="zoom-in"] {
+  animation-name: zoomIn;
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Zoom Out - Element scales down from larger size */
+[data-animate="zoom-out"] {
+  animation-name: zoomOut;
+}
+
+@keyframes zoomOut {
+  from {
+    opacity: 0;
+    transform: scale(1.2);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Flip Up - Element rotates in from bottom */
+[data-animate="flip-up"] {
+  animation-name: flipUp;
+}
+
+@keyframes flipUp {
+  from {
+    opacity: 0;
+    transform: perspective(1000px) rotateX(45deg);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(1000px) rotateX(0deg);
+  }
+}
+
+/* Flip Down - Element rotates in from top */
+[data-animate="flip-down"] {
+  animation-name: flipDown;
+}
+
+@keyframes flipDown {
+  from {
+    opacity: 0;
+    transform: perspective(1000px) rotateX(-45deg);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(1000px) rotateX(0deg);
+  }
+}
+
+/* Fade - Simple fade in */
+[data-animate="fade"] {
+  animation-name: fadeIn;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Slide Up - Larger slide distance */
+[data-animate="slide-up"] {
+  animation-name: slideUp;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(80px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Bounce In */
+[data-animate="bounce-in"] {
+  animation-name: bounceIn;
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ============================================================
+   ANIMATION DURATIONS
+   ============================================================ */
+
+[data-duration="very-fast"] {
+  animation-duration: 200ms;
+}
+
+[data-duration="fast"] {
+  animation-duration: 400ms;
+}
+
+[data-duration="normal"] {
+  animation-duration: 600ms;
+}
+
+[data-duration="light-slow"] {
+  animation-duration: 800ms;
+}
+
+[data-duration="slow"] {
+  animation-duration: 1000ms;
+}
+
+[data-duration="very-slow"] {
+  animation-duration: 1200ms;
+}
+
+/* ============================================================
+   ANIMATION DELAYS (for staggered effects)
+   ============================================================ */
+
+
+/* ============================================================
+   ANIMATION TIMING FUNCTIONS
+   ============================================================ */
+
+[data-easing="ease"] {
+  animation-timing-function: ease;
+}
+
+[data-easing="ease-in"] {
+  animation-timing-function: ease-in;
+}
+
+[data-easing="ease-out"] {
+  animation-timing-function: ease-out;
+}
+
+[data-easing="ease-in-out"] {
+  animation-timing-function: ease-in-out;
+}
+
+[data-easing="spring"] {
+  animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* ============================================================
+   SPECIAL ANIMATION COMBINATIONS
+   ============================================================ */
+
+/* Hero animations - more dramatic */
+.hero-animate {
+  animation: heroEntrance 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes heroEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(60px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Card hover enhancement */
+.card-animate {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-animate:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Stagger group - parent container */
+.stagger-group [data-animate] {
+  --stagger-delay: 0;
+}
+.stagger-group [data-animate]:nth-child(1) { --stagger-delay: 0; }
+.stagger-group [data-animate]:nth-child(2) { --stagger-delay: 1; }
+.stagger-group [data-animate]:nth-child(3) { --stagger-delay: 2; }
+.stagger-group [data-animate]:nth-child(4) { --stagger-delay: 3; }
+.stagger-group [data-animate]:nth-child(5) { --stagger-delay: 4; }
+.stagger-group [data-animate]:nth-child(6) { --stagger-delay: 5; }
+.stagger-group [data-animate]:nth-child(7) { --stagger-delay: 6; }
+.stagger-group [data-animate]:nth-child(8) { --stagger-delay: 7; }
+
+.stagger-group [data-animate] {
+  animation-delay: calc(var(--stagger-delay) * 100ms);
+}
+
+/* ============================================================
+   REDUCE MOTION PREFERENCE
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  [data-animate],
+  .hero-animate {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* ============================================================
+   UTILITY CLASSES
+   ============================================================ */
+
+/* Immediately visible (skip animation) */
+.no-animate {
+  opacity: 1 !important;
+  transform: none !important;
+  animation: none !important;
+}
